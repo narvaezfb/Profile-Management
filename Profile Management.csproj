@@ -25,11 +25,13 @@
     <None Remove="Models\" />
     <None Remove="Models\Requests\" />
     <None Remove="Models\ModelConfigurations\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="Models\Requests\" />
     <Folder Include="Models\ModelConfigurations\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>

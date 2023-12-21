@@ -24,7 +24,7 @@ namespace Profile_Management.Migrations
                     Country = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     Gender = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     Language = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    ProfilePicture = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
+                    ProfilePicture = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {

@@ -14,7 +14,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.Country).IsRequired().HasMaxLength(255);
         builder.Property(u => u.Gender).IsRequired().HasMaxLength(255);
         builder.Property(u => u.Language).IsRequired().HasMaxLength(255);
-        builder.Property(u => u.ProfilePicture).IsRequired().HasMaxLength(255);
+        builder.Property(u => u.ProfilePicture).HasMaxLength(255);
 
 
 
