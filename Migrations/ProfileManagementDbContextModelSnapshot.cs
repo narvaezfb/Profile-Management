@@ -60,7 +60,6 @@ namespace Profile_Management.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<string>("ProfilePicture")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 

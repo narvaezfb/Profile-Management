@@ -11,7 +11,7 @@ using Profile_Management.Data;
 namespace Profile_Management.Migrations
 {
     [DbContext(typeof(ProfileManagementDbContext))]
-    [Migration("20231221182159_InitialCreate")]
+    [Migration("20231221230828_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -63,7 +63,6 @@ namespace Profile_Management.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.Property<string>("ProfilePicture")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
