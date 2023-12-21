@@ -1,0 +1,43 @@
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/appsettings.Development.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/appsettings.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Profile Management
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Profile Management.deps.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Profile Management.runtimeconfig.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Profile Management.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Profile Management.pdb
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Humanizer.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Npgsql.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/System.CodeDom.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.csproj.AssemblyReference.cache
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.AssemblyInfoInputs.cache
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.AssemblyInfo.cs
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.csproj.CoreCompileInputs.cache
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.MvcApplicationPartsAssemblyInfo.cs
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.MvcApplicationPartsAssemblyInfo.cache
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets/msbuild.Profile Management.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets/msbuild.build.Profile Management.props
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.Profile Management.props
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.Profile Management.props
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets.pack.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets.build.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/staticwebassets.development.json
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/scopedcss/bundle/Profile Management.styles.css
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.csproj.CopyComplete
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/refint/Profile Management.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.pdb
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.genruntimeconfig.cache
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/ref/Profile Management.dll
