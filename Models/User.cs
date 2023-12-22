@@ -29,21 +29,20 @@ namespace Profile_Management.Models
             Language = language;
             ProfilePicture = null;
 
-            _baseUrl = "https://localhost:7214/Auth/";
+            _baseUrl = "https://localhost:7214/";
             _httpClient = new HttpClient();
         }
 
-        // Method to update authentication data in another service
-        public async Task<bool> UpdateAuthenticationServiceAsync(string email, string password)
+        public async Task<bool> CreateAccountInAuthenticationServiceAsync(string email, string password)
         {
             try
             {
-                string endpoint = "Signup"; 
+                string endpoint = "Auth/Signup"; 
 
                 var requestData = new
                 {
-                    email = email,
-                    password = password,
+                    email,
+                    password
                 };
 
                 var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(requestData));
@@ -58,6 +57,28 @@ namespace Profile_Management.Models
                 return false;
             }
         }
+
+        //public async Task<bool> DeleteAccountInAuthenticationServiceAsync(HttpContext httpContext,  string email)
+        //{
+        //    //try
+        //    //{
+        //    //    string endpoint = "Auth/Delete/";
+
+        //    //    if (HttpContext.Items.TryGetValue("Token", out var tokenValue))
+        //    //    {
+        //    //        string token = tokenValue?.ToString() ?? string.Empty;
+        //    //        // Use the 'token' variable as needed...
+        //    //    }
+
+        //    //    var response = await _httpClient.DeleteAsync($"{_baseUrl}{endpoint}{email}");
+
+        //    //    return response.IsSuccessStatusCode;
+        //    //}
+        //    //catch (Exception)
+        //    //{
+        //    //    return false;
+        //    //}
+        //}
     }
 
 }

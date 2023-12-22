@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZVtFXMv53vYihaoXG0HVALzA+XKurTXkBiOEhbUIpqd0aWCpsCBfg2Ychy1C4xnKwqNoG17XbBw9AI5aDmEQBQ==",
+  "dgSpecHash": "cPffmY6hCv+CYF0d7uDuMLN007snAsATs2UGB9dR+bNSTYUIqE+e05r9AXXiov16lKnQj3ndXsidgchU4zaFrA==",
   "success": true,
   "projectFilePath": "/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/Profile Management.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "/Users/fabiannarvaez/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/fabiannarvaez/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/fabiannarvaez/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/Users/fabiannarvaez/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/fabiannarvaez/.nuget/packages/npgsql/7.0.6/npgsql.7.0.6.nupkg.sha512",
     "/Users/fabiannarvaez/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.11/npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "/Users/fabiannarvaez/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
