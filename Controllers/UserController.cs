@@ -4,14 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Profile_Management.Data;
 using Profile_Management.Models;
 using Profile_Management.Models.Requests;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Profile_Management.Controllers
 {
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ProfileManagementDbContext _context;
@@ -22,55 +23,50 @@ namespace Profile_Management.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("register")]
-        public async Task<ActionResult> Signup([FromBody] CreateUser model)
+        [HttpDelete("Account/Delete/{email}")]
+        public async Task<ActionResult> DeleteAccount(string email)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest("Invalid body");
-            }
-
-            if (!model.ConfirmPasswords(model.Password, model.PasswordConfirm))
-            {
-                return BadRequest("Passwords do not match");
-            }
-
-            User user = new User(model.Username, model.FirstName, model.LastName, model.Email, model.Country, model.Gender, model.Language);
-
-            //_context.Users.Add(user);
-            //await _context.SaveChangesAsync();
-
-            //return Ok("User account created successfully");
-
             using (var transaction = _context.Database.BeginTransaction())
             {
                 try
                 {
-                    _context.Users.Add(user);
-                    await _context.SaveChangesAsync();
+                    var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
 
-                    // Call a method to update authentication service
-                    bool authUpdateSuccess = await user.UpdateAuthenticationServiceAsync(model.Email, model.Password);
-
-                    if (!authUpdateSuccess)
+                    if (user == null)
                     {
-                        // If authentication service update fails, roll back the transaction
-                        transaction.Rollback();
-                        return StatusCode(500, "Failed to update authentication service");
+                        return BadRequest("User not found with that ID");
                     }
 
-                    // Commit the transaction if everything succeeds
-                    transaction.Commit();
+                    _context.Users.Remove(user);
+                    await _context.SaveChangesAsync();
 
-                    return Ok("User account created successfully");
+
+                    //// Call a method to update authentication service
+                    //bool isAccountDeletedSuccess = await user.DeleteAccountInAuthenticationServiceAsync(email);
+
+                    //if (!isAccountDeletedSuccess)
+                    //{
+                    //    transaction.Rollback();
+                    //    return StatusCode(500, "Failed to delete account in authentication service");
+                    //}
+
+                    //transaction.Commit();
+
+                    return Ok("Account deleted");
+
                 }
-                catch (Exception ex)
+                catch (DbUpdateException dbUpdateException)
                 {
-                    // Handle exceptions or specific error cases if needed
                     transaction.Rollback();
-                    return StatusCode(500, "An error occurred: " + ex.Message);
+                    return BadRequest("Database error occurred: " + dbUpdateException.InnerException?.Message);
+                }
+                catch (Exception e)
+                {
+                    transaction.Rollback();
+                    return StatusCode(500, "An error occurred while processing the request: " + e.Message);
                 }
             }
+                
         }
     }
 }

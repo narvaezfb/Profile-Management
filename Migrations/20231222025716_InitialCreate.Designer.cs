@@ -11,7 +11,7 @@ using Profile_Management.Data;
 namespace Profile_Management.Migrations
 {
     [DbContext(typeof(ProfileManagementDbContext))]
-    [Migration("20231221230828_InitialCreate")]
+    [Migration("20231222025716_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
