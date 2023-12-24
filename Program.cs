@@ -52,8 +52,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Register TokenValidationServices
+// Register Services
 builder.Services.AddHttpClient<ITokenValidationService, TokenValidationService>();
+builder.Services.AddHttpClient<SignupService>();
+builder.Services.AddHttpClient<DeleteAccountService>();
+
 
 var app = builder.Build();
 
@@ -62,7 +65,6 @@ app.UseWhen(context => context.Request.Path.StartsWithSegments("/User/Account"),
     appBuilder.UseMiddleware<TokenValidationMiddleware>();
 });
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

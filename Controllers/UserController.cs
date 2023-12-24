@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Profile_Management.Data;
 using Profile_Management.Models;
 using Profile_Management.Models.Requests;
-
+using Profile_Management.Services;
 
 namespace Profile_Management.Controllers
 {
@@ -16,13 +16,14 @@ namespace Profile_Management.Controllers
     public class UserController : ControllerBase
     {
         private readonly ProfileManagementDbContext _context;
+        private readonly DeleteAccountService _deleteAccountService;
 
-        public UserController(ProfileManagementDbContext context)
+        public UserController(ProfileManagementDbContext context, DeleteAccountService deleteAccountService)
         {
             _context = context;
+            _deleteAccountService = deleteAccountService;
         }
 
-        [AllowAnonymous]
         [HttpDelete("Account/Delete/{email}")]
         public async Task<ActionResult> DeleteAccount(string email)
         {
@@ -41,16 +42,16 @@ namespace Profile_Management.Controllers
                     await _context.SaveChangesAsync();
 
 
-                    //// Call a method to update authentication service
-                    //bool isAccountDeletedSuccess = await user.DeleteAccountInAuthenticationServiceAsync(email);
+                    // Call a method to update authentication service
+                    bool isAccountDeletedSuccess = await _deleteAccountService.DeleteAccountInAuthenticationServiceAsync(email);
 
-                    //if (!isAccountDeletedSuccess)
-                    //{
-                    //    transaction.Rollback();
-                    //    return StatusCode(500, "Failed to delete account in authentication service");
-                    //}
+                    if (!isAccountDeletedSuccess)
+                    {
+                        transaction.Rollback();
+                        return StatusCode(500, "Failed to delete account in authentication service");
+                    }
 
-                    //transaction.Commit();
+                    transaction.Commit();
 
                     return Ok("Account deleted");
 
@@ -65,8 +66,7 @@ namespace Profile_Management.Controllers
                     transaction.Rollback();
                     return StatusCode(500, "An error occurred while processing the request: " + e.Message);
                 }
-            }
-                
+            }    
         }
     }
 }

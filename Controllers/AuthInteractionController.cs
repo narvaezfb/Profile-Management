@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Profile_Management.Data;
 using Profile_Management.Models;
 using Profile_Management.Models.Requests;
-
+using Profile_Management.Services;
 
 namespace Profile_Management.Controllers
 {
@@ -16,10 +16,12 @@ namespace Profile_Management.Controllers
     public class AuthInteractionController : ControllerBase
     {
         private readonly ProfileManagementDbContext _context;
+        private readonly SignupService _signupService;
 
-        public AuthInteractionController(ProfileManagementDbContext context)
+        public AuthInteractionController(ProfileManagementDbContext context, SignupService signupService)
         {
             _context = context;
+            _signupService = signupService;
         }
 
         [AllowAnonymous]
@@ -46,7 +48,7 @@ namespace Profile_Management.Controllers
                     await _context.SaveChangesAsync();
 
                     // Call a method to update authentication service
-                    bool authUpdateSuccess = await user.CreateAccountInAuthenticationServiceAsync(model.Email, model.Password);
+                    bool authUpdateSuccess = await _signupService.CreateAccountInAuthenticationServiceAsync(model.Email, model.Password);
 
                     if (!authUpdateSuccess)
                     {
