@@ -36,8 +36,7 @@ namespace Profile_Management.Middleware
 
                 if (isTokenValid)
                 {
-                    // Token is valid, proceed to the next middleware in the pipeline
-                    context.Items["Token"] = token;
+                    context.Items["ValidToken"] = token;
                     await _next(context);
                 }
                 else
