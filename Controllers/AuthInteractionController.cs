@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Profile_Management.Data;
+using Profile_Management.Interfaces;
 using Profile_Management.Models;
 using Profile_Management.Models.Requests;
 using Profile_Management.Services;
@@ -16,9 +17,9 @@ namespace Profile_Management.Controllers
     public class AuthInteractionController : ControllerBase
     {
         private readonly ProfileManagementDbContext _context;
-        private readonly SignupService _signupService;
+        private readonly ISignupService _signupService;
 
-        public AuthInteractionController(ProfileManagementDbContext context, SignupService signupService)
+        public AuthInteractionController(ProfileManagementDbContext context, ISignupService signupService)
         {
             _context = context;
             _signupService = signupService;
