@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Net.Http;
+using Profile_Management.Interfaces;
 
 namespace Profile_Management.Services
 {
-	public class SignupService
+	public class SignupService: ISignupService
 	{
         private readonly HttpClient _httpClient;
         private string _baseUrl;
@@ -11,7 +12,7 @@ namespace Profile_Management.Services
         public SignupService(HttpClient httpClient)
         {
             _baseUrl = "https://localhost:7214/";
-            _httpClient = new HttpClient();
+            _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         }
 
         public async Task<bool> CreateAccountInAuthenticationServiceAsync(string email, string password)

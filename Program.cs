@@ -54,8 +54,8 @@ builder.Services.AddSwaggerGen(c =>
 
 // Register Services
 builder.Services.AddHttpClient<ITokenValidationService, TokenValidationService>();
-builder.Services.AddHttpClient<SignupService>();
-builder.Services.AddHttpClient<DeleteAccountService>();
+builder.Services.AddHttpClient<ISignupService, SignupService>();
+builder.Services.AddHttpClient<IDeleteAccountService, DeleteAccountService>();
 
 
 var app = builder.Build();

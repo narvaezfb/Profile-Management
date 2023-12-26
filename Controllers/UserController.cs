@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Profile_Management.Data;
+using Profile_Management.Interfaces;
 using Profile_Management.Models;
 using Profile_Management.Models.Requests;
 using Profile_Management.Services;
@@ -16,9 +17,9 @@ namespace Profile_Management.Controllers
     public class UserController : ControllerBase
     {
         private readonly ProfileManagementDbContext _context;
-        private readonly DeleteAccountService _deleteAccountService;
+        private readonly IDeleteAccountService _deleteAccountService;
 
-        public UserController(ProfileManagementDbContext context, DeleteAccountService deleteAccountService)
+        public UserController(ProfileManagementDbContext context, IDeleteAccountService deleteAccountService)
         {
             _context = context;
             _deleteAccountService = deleteAccountService;

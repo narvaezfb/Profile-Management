@@ -1,7 +1,9 @@
 ﻿using System;
+using Profile_Management.Interfaces;
+
 namespace Profile_Management.Services
 {
-    public class DeleteAccountService
+    public class DeleteAccountService: IDeleteAccountService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly HttpClient _httpClient;
@@ -10,7 +12,7 @@ namespace Profile_Management.Services
         public DeleteAccountService(IHttpContextAccessor httpContextAccessor, HttpClient httpClient)
         {
             _baseUrl = "https://localhost:7214/";
-            _httpClient = new HttpClient();
+            _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
         }
 
@@ -22,7 +24,6 @@ namespace Profile_Management.Services
                 
                 if (!string.IsNullOrEmpty(token))
                 {
-                    // Use HttpClient to make an API call to another service
                     _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                     string endpoint = "Auth/Delete/";
@@ -34,7 +35,7 @@ namespace Profile_Management.Services
 
                 return false;
             }
-            catch (HttpRequestException httpEx)
+            catch (HttpRequestException)
             {
                 return false;
             }
