@@ -15,7 +15,7 @@ namespace Profile_Management.Services
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         }
 
-        public async Task<bool> CreateAccountInAuthenticationServiceAsync(string email, string password)
+        public async Task<bool> CreateAccountInAuthenticationServiceAsync(string userId, string email, string password)
         {
             try
             {
@@ -23,6 +23,7 @@ namespace Profile_Management.Services
 
                 var requestData = new
                 {
+                    userId,
                     email,
                     password
                 };

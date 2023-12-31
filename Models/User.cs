@@ -4,7 +4,7 @@ namespace Profile_Management.Models
 {
 	public class User
 	{
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public  string Username { get; set; }
         public  string FirstName { get; set; }
         public  string LastName { get; set; }
@@ -14,8 +14,14 @@ namespace Profile_Management.Models
         public  string Language { get; set; }
         public  string? ProfilePicture { get; set; }
 
-        public User(string username, string firstName, string lastName, string email, string country, string gender, string language)
+        public User()
         {
+            // Default constructor logic
+        }
+
+        public User(string userId, string username, string firstName, string lastName, string email, string country, string gender, string language)
+        {
+            UserID = userId;
             Username = username;
             FirstName = firstName;
             LastName = lastName;
