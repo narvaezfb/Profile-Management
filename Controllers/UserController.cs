@@ -25,14 +25,14 @@ namespace Profile_Management.Controllers
             _deleteAccountService = deleteAccountService;
         }
 
-        [HttpDelete("Account/Delete/{email}")]
-        public async Task<ActionResult> DeleteAccount(string email)
+        [HttpDelete("Account/Delete/{userId}")]
+        public async Task<ActionResult> DeleteAccount(string userId)
         {
             using (var transaction = _context.Database.BeginTransaction())
             {
                 try
                 {
-                    var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+                    var user = await _context.Users.FindAsync(userId);
 
                     if (user == null)
                     {
@@ -44,7 +44,7 @@ namespace Profile_Management.Controllers
 
 
                     // Call a method to update authentication service
-                    bool isAccountDeletedSuccess = await _deleteAccountService.DeleteAccountInAuthenticationServiceAsync(email);
+                    bool isAccountDeletedSuccess = await _deleteAccountService.DeleteAccountInAuthenticationServiceAsync(userId);
 
                     if (!isAccountDeletedSuccess)
                     {

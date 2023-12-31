@@ -16,7 +16,7 @@ namespace Profile_Management.Services
             _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
         }
 
-        public async Task<bool> DeleteAccountInAuthenticationServiceAsync(string email)
+        public async Task<bool> DeleteAccountInAuthenticationServiceAsync(string userId)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Profile_Management.Services
 
                     string endpoint = "Auth/Delete/";
 
-                    var response = await _httpClient.DeleteAsync($"{_baseUrl}{endpoint}{email}");
+                    var response = await _httpClient.DeleteAsync($"{_baseUrl}{endpoint}{userId}");
 
                     return response.IsSuccessStatusCode;
                 }

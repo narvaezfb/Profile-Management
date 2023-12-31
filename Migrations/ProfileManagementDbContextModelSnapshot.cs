@@ -23,11 +23,8 @@ namespace Profile_Management.Migrations
 
             modelBuilder.Entity("Profile_Management.Models.User", b =>
                 {
-                    b.Property<int>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserID"));
+                    b.Property<string>("UserID")
+                        .HasColumnType("text");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -71,6 +68,9 @@ namespace Profile_Management.Migrations
                     b.HasKey("UserID");
 
                     b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("UserID")
                         .IsUnique();
 
                     b.HasIndex("Username")

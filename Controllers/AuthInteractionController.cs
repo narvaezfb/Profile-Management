@@ -38,8 +38,8 @@ namespace Profile_Management.Controllers
             {
                 return BadRequest("Passwords do not match");
             }
-
-            User user = new User(model.Username, model.FirstName, model.LastName, model.Email, model.Country, model.Gender, model.Language);
+            string userId = Guid.NewGuid().ToString();
+            User user = new User(userId, model.Username, model.FirstName, model.LastName, model.Email, model.Country, model.Gender, model.Language);
 
             using (var transaction = _context.Database.BeginTransaction())
             {
@@ -49,7 +49,7 @@ namespace Profile_Management.Controllers
                     await _context.SaveChangesAsync();
 
                     // Call a method to update authentication service
-                    bool authUpdateSuccess = await _signupService.CreateAccountInAuthenticationServiceAsync(model.Email, model.Password);
+                    bool authUpdateSuccess = await _signupService.CreateAccountInAuthenticationServiceAsync(userId, model.Email, model.Password);
 
                     if (!authUpdateSuccess)
                     {
@@ -72,6 +72,11 @@ namespace Profile_Management.Controllers
             }
 
         }
+        // Generate New User ID
+        //public string GenerateNewUserID()
+        //{
+        //    return Guid.NewGuid().ToString();
+        //}
     }
 }
 

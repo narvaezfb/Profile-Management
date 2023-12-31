@@ -14,6 +14,7 @@
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Microsoft.OpenApi.dll
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Npgsql.dll
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
@@ -41,4 +42,3 @@
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.pdb
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/Profile Management.genruntimeconfig.cache
 /Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/obj/Debug/net7.0/ref/Profile Management.dll
-/Users/fabiannarvaez/Documents/Chat-System/Microservices/Profile Management/Profile Management/bin/Debug/net7.0/Newtonsoft.Json.dll

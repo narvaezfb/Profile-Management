@@ -11,8 +11,8 @@ using Profile_Management.Data;
 namespace Profile_Management.Migrations
 {
     [DbContext(typeof(ProfileManagementDbContext))]
-    [Migration("20231222025716_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231231031443_InitialCreatee")]
+    partial class InitialCreatee
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,11 +26,8 @@ namespace Profile_Management.Migrations
 
             modelBuilder.Entity("Profile_Management.Models.User", b =>
                 {
-                    b.Property<int>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserID"));
+                    b.Property<string>("UserID")
+                        .HasColumnType("text");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -74,6 +71,9 @@ namespace Profile_Management.Migrations
                     b.HasKey("UserID");
 
                     b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("UserID")
                         .IsUnique();
 
                     b.HasIndex("Username")
